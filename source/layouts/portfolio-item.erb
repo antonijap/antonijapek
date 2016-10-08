@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <%= partial 'partials/head' %>
+  <body>
+    <header>
+    	<div class="row">
+    		<div class="columns">
+    			<h1><a href="/">Antonija Pek</a></h1>
+    		</div>
+    		<div class="columns">
+    			<ul class="menu align-right">
+    			  <li><a href="/about">About & Contact</a></li>
+    			  <li><a href="/blog">Blog</a></li>
+    			</ul>
+    		</div>
+    	</div>
+    </header>
+    <div class="row portfolio-item">
+      <div class="columns">
+        <h2><%= current_page.title %></h2>
+      </div>
+      <div class="small-12 medium-8 columns description">
+        <%= yield %>
+      </div>
+      <div class="small-12 columns">
+        <img src="<%= current_page.data.full_image %>" alt="<%= current_page.title %>">
+      </div>
+    </div>
+    <%= partial 'partials/footer' %>
+  </body>
+</html>

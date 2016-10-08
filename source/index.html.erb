@@ -1,0 +1,61 @@
+---
+title: Portfolio
+---
+<header>
+	<div class="row">
+		<div class="columns">
+			<h1><a href="/">Antonija Pek</a></h1>
+		</div>
+		<div class="columns">
+			<ul class="menu align-right">
+			  <li><a href="/about">About & Contact</a></li>
+			  <li><a href="/blog">Blog</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="row align-middle" id="main">
+		<div class="columns">
+			<h2>
+				Hello, thanks for visiting!
+			</h2>
+			<h2 class="intro">
+				I'm designer specialising in mobile and web interfaces. I'm also an enthusiast programmer and I like to code iOS apps and websites. If you need a website or great UI, just <a href="/about">drop me a line</a>.
+			</h2>
+		</div>
+	</div>
+</header>
+
+<div class="row">
+	<div class="columns">
+		<section class="portfolio">
+			<div class="row">
+				<div class="small-12 columns">
+					<div class="large button-group">
+						<a class="button filter" data-filter="all">All Work</a>
+						<a class="button filter" data-filter=".website">Websites</a>
+						<a class="button filter" data-filter=".illustration">Illustrations</a>
+						<a class="button filter" data-filter=".app">Apps</a>
+						<a class="button filter" data-filter=".logo">Logo</a>
+					</div>
+				</div>
+			</div>
+			<div class="row" id="portfolio">
+				<% blog('portfolio').articles.each do |article| %>
+
+					<div class="item small-12 medium-4 columns mix <%= article.data.category %>">
+						<a href="<%= article.url %>">
+							<div class="image-wrapper overlay-fade-in">
+								<img src="<%= article.data.thumbnail %>">
+								<div class="image-overlay-content">
+									<h2><%= article.title %></h2>
+									<p class="price"><%= article.data.category %></p>
+								</div>
+							</div>
+						</a>
+					</div>
+
+				<% end %>
+			</div>
+		</section>
+	</div>
+</div>

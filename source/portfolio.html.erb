@@ -1,0 +1,51 @@
+---
+title: Portfolio
+---
+<div class="expanded row collapse">
+	<div class="columns">
+		<nav class="portfolio-header">
+			<div class="row align-right align-middle">
+				<div class="columns">
+					<h1><a href="/">ANTONIJA PEK</a></h1>
+				</div>
+				<div class="shrink columns">
+					<button type="button" data-toggle="offCanvas"><span class="ion-navicon"></span></button>
+				</div>
+			</div>
+		</nav>
+	</div>
+</div>
+<div class="row">
+	<div class="columns text-center">
+		<section class="portfolio">
+			<h3>Portfolio</h3>
+			<div class="row align-center">
+				<div class="small-12 shrink columns">
+					<div class="large button-group">
+						<a class="button filter" data-filter="all">All Work</a>
+						<a class="button filter" data-filter=".website">Websites</a>
+						<a class="button filter" data-filter=".illustration">Illustrations</a>
+						<a class="button filter" data-filter=".app">Apps</a>
+					</div>
+				</div>
+			</div>
+			<div class="row small-up-12 medium-up-3" id="portfolio">
+				<% blog('portfolio').articles.each do |article| %>
+
+					<div class="item columns mix <%= article.data.category %>">
+						<a data-open="one">
+							<div class="image-wrapper overlay-fade-in">
+								<img src="<%= article.data.thumbnail %>">
+								<div class="image-overlay-content">
+									<h2><%= article.title %></h2>
+									<p class="price"><%= article.data.category %></p>
+								</div>
+							</div>
+						</a>
+					</div>
+
+				<% end %>
+			</div>
+		</section>
+	</div>
+</div>
